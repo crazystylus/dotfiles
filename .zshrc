@@ -29,10 +29,13 @@ alias la="exa -ha"
 alias ll="exa -lh"
 alias lla="exa -lha"
 
+# Replace vim with nvim
+alias vim="nvim"
+
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
-# replacing cd with zoxide
+# replacing cd with Zoxide
 function cd {
   __zoxide_z  "$@" && ls -F
 }

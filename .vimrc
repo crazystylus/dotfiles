@@ -6,13 +6,21 @@ Plug 'itchyny/lightline.vim'
 Plug 'scrooloose/nerdtree'
 Plug 'chiel92/vim-autoformat'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
-call plug#end()
+Plug 'cespare/vim-toml'
+Plug 'stephpy/vim-yaml'
+Plug 'chriskempson/base16-vim'
+Plug 'preservim/nerdtree'
 
+call plug#end()
+"source $HOME/.sources/base-16-themes/base16-atelier-dune-vim.vim 
 
 set shortmess+=c
 
 syntax on
 set completeopt=menuone,noinsert,noselect
+set cmdheight=2
+
+
 set nu
 set history=999
 set undolevels=999
@@ -25,9 +33,14 @@ set incsearch       " Best Match so far
 set t_Co=256        " Set UI to 256 colour mode
 set cursorline
 set showmode
+"set clipboard=unnamedplus,autoselect
+autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
+filetype plugin indent on
+noremap <leader>p :read !xsel --clipboard --output<cr>
+noremap <leader>c :w !xsel -ib<cr><cr>
 
-set expandtab
-set autoindent smartindent
+set noexpandtab
+set autoindent
 set softtabstop=2
 set tabstop=2
 set shiftwidth=2
@@ -64,23 +77,25 @@ nnoremap ; :
 map H ^
 map L $
 
-""" Customize colors
-hi Pmenu ctermbg=DarkGrey guibg=DarkGrey ctermfg=White
-hi CocFloating ctermbg=DarkGrey guibg=DarkGrey ctermfg=White
-hi CocErrorFloat ctermbg=DarkGrey guibg=DarkGrey ctermfg=White
+""" Colors for vim
+
+
+
+""" Colors for Lightline
+
 " Lightline
 let g:lightline = {
       \ 'active': {
-        \   'left': [ [ 'mode', 'paste' ],
-        \             [ 'readonly', 'filename', 'modified' ] ],
-        \   'right': [ [ 'lineinfo' ],
-        \              [ 'percent' ],
-        \              [ 'fileencoding', 'filetype' ] ],
-        \ },
-        \ 'component_function': {
-          \   'filename': 'LightlineFilename'
-          \ },
-          \ }
+      \   'left': [ [ 'mode', 'paste' ],
+      \             [ 'readonly', 'filename', 'modified' ] ],
+      \   'right': [ [ 'lineinfo' ],
+      \              [ 'percent' ],
+      \              [ 'fileencoding', 'filetype' ] ],
+      \ },
+      \ 'component_function': {
+      \   'filename': 'LightlineFilename'
+      \ },
+      \ }
 set laststatus=2
 inoremap <expr> <Tab>   pumvisible() ? "\<C-n>" : "\<Tab>"
 inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
@@ -89,4 +104,8 @@ function! LightlineFilename()
   return expand('%:t') !=# '' ? @% : '[No Name]'
 endfunction
 
-au BufWrite * :Autoformat
+" Preview function to be used with Okular on Markdown files
+function! Preview()
+	:call system('nohup okular '.shellescape(expand("%")).' &> /dev/null &')
+endfunction
+nnoremap pv :call Preview()<CR>
