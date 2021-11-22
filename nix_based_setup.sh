@@ -4,13 +4,13 @@
 git clone --recurse-submodules -j8 https://github.com/crazystylus/dotfiles.git $HOME/.dotfiles
 
 #Install Cargo and Rust
-curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+#curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 
 #Source cargo env
-source $HOME /.cargo/env
+#source $HOME /.cargo/env
 
 #Install zoxide and exa
-cargo install zoxide exa bat
+#cargo install zoxide exa bat
 
 #Install Vim Plug
 curl -fLo $HOME/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim

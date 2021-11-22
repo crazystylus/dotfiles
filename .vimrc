@@ -3,16 +3,16 @@ call plug#begin('~/.vim/plugged')
 Plug 'vim-syntastic/syntastic'
 Plug 'rust-lang/rust.vim'
 Plug 'itchyny/lightline.vim'
-Plug 'scrooloose/nerdtree'
 Plug 'chiel92/vim-autoformat'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'cespare/vim-toml'
 Plug 'stephpy/vim-yaml'
 Plug 'chriskempson/base16-vim'
 Plug 'preservim/nerdtree'
+Plug 'dense-analysis/ale'
 
 call plug#end()
-"source $HOME/.sources/base-16-themes/base16-atelier-dune-vim.vim 
+"source $HOME/.sources/base-16-themes/base16-atelier-dune-vim.vim
 
 set shortmess+=c
 
@@ -109,3 +109,23 @@ function! Preview()
 	:call system('nohup okular '.shellescape(expand("%")).' &> /dev/null &')
 endfunction
 nnoremap pv :call Preview()<CR>
+
+" Configure Ale for linting
+let g:ale_linters = {
+    \ 'python': ['pylint'],
+    \ 'vim': ['vint'],
+    \ 'cpp': ['clang'],
+    \ 'c': ['clang'],
+		\ 'yaml': ['yamllint'],
+		\ 'xml': ['xmllint'],
+\}
+let g:ale_set_highlights = 0
+let g:ale_fixers = {
+		\'*': ['remove_trailing_lines', 'trim_whitespace'],
+		\'javascript': ['eslint'],
+		\'cpp': ['clang-format'],
+		\'c': ['clang-format'],
+		\'yaml': ['yamlfix'],
+		\ 'xml': ['xmllint'],
+\}
+let b:ale_fix_on_save = 1
