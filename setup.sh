@@ -19,11 +19,11 @@ curl -fLo $HOME/.vim/autoload/plug.vim --create-dirs https://raw.githubuserconte
 curl -fLo $HOME/.local/share/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
 #Creating all necessary directories
-mkdir -p $HOME /.zprompts/
-mkdir -p $HOME /.local/bin/
-mkdir -p $HOME /.config/i3/
-mkdir -p $HOME /.config/alacritty/
-mkdir -p $HOME /.config/nvim/
+mkdir -p $HOME/.zprompts/
+mkdir -p $HOME/.local/bin/
+mkdir -p $HOME/.config/i3/
+mkdir -p $HOME/.config/alacritty/
+mkdir -p $HOME/.config/nvim/
 
 #Create all required symlinks
 ln -s $HOME/.dotfiles/.zshrc $HOME/.zshrc

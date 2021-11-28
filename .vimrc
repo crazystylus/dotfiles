@@ -5,10 +5,10 @@ Plug 'rust-lang/rust.vim'
 Plug 'itchyny/lightline.vim'
 Plug 'chiel92/vim-autoformat'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
-Plug 'cespare/vim-toml'
-Plug 'stephpy/vim-yaml'
+" Plug 'cespare/vim-toml'
+" Plug 'stephpy/vim-yaml'
 Plug 'chriskempson/base16-vim'
-Plug 'preservim/nerdtree'
+" Plug 'preservim/nerdtree'
 Plug 'dense-analysis/ale'
 
 call plug#end()
