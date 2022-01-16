@@ -7,7 +7,7 @@ git clone --recurse-submodules -j8 https://github.com/crazystylus/dotfiles.git $
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 
 #Source cargo env
-source $HOME /.cargo/env
+source $HOME/.cargo/env
 
 #Install zoxide and exa
 cargo install zoxide exa bat
