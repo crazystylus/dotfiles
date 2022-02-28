@@ -131,6 +131,7 @@ let g:ale_linters = {
 		\ 'json': ['jq'],
 		\ 'go': ['gofmt'],
 		\ 'sh': ['shellcheck'],
+		\ 'rust': ['cspell'],
 \}
 let g:ale_set_highlights = 1
 let g:ale_fixers = {

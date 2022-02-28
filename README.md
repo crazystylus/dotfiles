@@ -1,5 +1,5 @@
-# Linux Dotfiles files
-These mainly contains dotfiles files for zsh and vim
+# Linux Dot-files files
+These mainly contains dot-files files for zsh and vim
 
 ```shell
 curl "https://raw.githubusercontent.com/crazystylus/dotfiles/master/setup.sh" | sh
