@@ -114,3 +114,5 @@ source $HOME/.dotfiles/zsh-autosuggestions/zsh-autosuggestions.zsh
 source $HOME/.dotfiles/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 source $HOME/.config/broot/launcher/bash/br
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

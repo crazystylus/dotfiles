@@ -1,17 +1,17 @@
 [submodule "zsh-completions"]
 	path = zsh-completions
-	url = git://github.com/zsh-users/zsh-completions.git
+	url = https://github.com/zsh-users/zsh-completions.git
 	branch = master
 [submodule "powerlevel10k"]
 	path = powerlevel10k
-	url = git://github.com/romkatv/powerlevel10k.git
+	url = https://github.com/romkatv/powerlevel10k.git
 	branch = master
 	depth = 1
 [submodule "zsh-syntax-highlighting"]
 	path = zsh-syntax-highlighting
-	url = git://github.com/zsh-users/zsh-syntax-highlighting.git
+	url = https://github.com/zsh-users/zsh-syntax-highlighting.git
 	branch = master
 [submodule "zsh-autosuggestions"]
 	path = zsh-autosuggestions
-	url = git://github.com/zsh-users/zsh-autosuggestions.git
+	url = https://github.com/zsh-users/zsh-autosuggestions.git
 	branch = master
