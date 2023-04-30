@@ -77,7 +77,6 @@ set relativenumber " Relative line numbers
 set number " Also show current absolute line
 set pastetoggle=<leader>p
 
-nnoremap <leader>c :set nolist!<CR>
 nnoremap <silent> \ :silent nohlsearch<CR>
 
 " Rust
@@ -141,7 +140,7 @@ set laststatus=2
 inoremap <expr> <Tab>   pumvisible() ? "\<C-n>" : "\<Tab>"
 inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 
-" Permanent undo
+" Use persistent undo history.
 set undodir=~/.vimdid
 set undofile
 
@@ -231,7 +230,7 @@ local on_attach = function(client, bufnr)
     },
   })
 end
-local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
+local capabilities = require('cmp_nvim_lsp').default_capabilities(vim.lsp.protocol.make_client_capabilities())
 local servers = { 'pyright', 'tsserver' }
 for _, lsp in pairs(servers) do
   require('lspconfig')[lsp].setup {
@@ -264,7 +263,7 @@ lspconfig.rust_analyzer.setup {
       },
       completion = {
 	      postfix = {
-	        enable = false,
+	        enable = true,
 	      },
       },
     },
@@ -282,7 +281,7 @@ vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
 
 -- Treesitter Setup
 require'nvim-treesitter.configs'.setup {
-  ensure_installed = { "c", "python", "rust", "cpp", "go", "vim", "lua" },
+  ensure_installed = { "c", "python", "rust", "cpp", "go", "vim", "lua", "lalrpop" },
   highlight = {
     enable = true,
     additional_vim_regex_highlighting = false,

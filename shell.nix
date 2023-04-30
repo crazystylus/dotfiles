@@ -21,6 +21,9 @@ in pkgs.mkShell {
 		pkgs.zoxide
 		pkgs.exa
 		pkgs.bat
+		pkgs.delta
+		pkgs.ripgrep
+		pkgs.fd
 		pkgs-latest.nodejs-16_x
 	];
 }
